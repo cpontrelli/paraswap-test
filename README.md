@@ -6,7 +6,7 @@ To use it you need metamask installed and loaded with rETH.
 
 Run the following two commands:
 
-npm install \n
+npm install
 npm start
 
 Then navigate to localhost port 8080 and connect your metamask wallet on the ropsten testnet.
