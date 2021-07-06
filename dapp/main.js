@@ -26,7 +26,7 @@ $(document).ready(function() {
 });
 
 function getPriceRoute(account) {
-    const priceUrl = `https://apiv4.paraswap.io/v2/prices?network=3&from=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&to=${DAI.address}&amount=${amount}&side=SELL`;
+    const priceUrl = `https://apiv4.paraswap.io/v2/prices?network=3&from=${ETH.address}&to=${DAI.address}&amount=${amount}&side=SELL`;
 
     $.ajax({
         url: priceUrl,
@@ -38,6 +38,7 @@ function getPriceRoute(account) {
             exchange(account, result.priceRoute);
         },
         error: function(error){
+            console.log('Error getting Price Route');
             console.log(error);
         }
     });
@@ -76,6 +77,7 @@ function exchange(account, priceRoute) {
             });
         },
         error: function(error){
+            console.log('Error getting transaction');
             console.log(error);
         }
     })
